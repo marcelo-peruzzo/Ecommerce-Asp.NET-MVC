@@ -1,3 +1,6 @@
+using Ecommerce_MVC.Context;
+using Microsoft.EntityFrameworkCore;
+
 namespace Ecommerce_MVC;
 
 public class Startup
@@ -12,6 +15,8 @@ public class Startup
     // This method gets called by the runtime. Use this method to add services to the container.
     public void ConfigureServices(IServiceCollection services)
     {
+        //Registrando o esse contexto como um serviço e declarando a string de conexão: DefaultConnection para o SQL Server
+        services.AddDbContext<AppDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
         services.AddControllersWithViews();
     }
 
