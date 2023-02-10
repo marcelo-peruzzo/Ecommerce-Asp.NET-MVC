@@ -1,3 +1,4 @@
+using Ecommerce_MVC.Models;
 using Microsoft.EntityFrameworkCore;
 
 namespace Ecommerce_MVC.Context

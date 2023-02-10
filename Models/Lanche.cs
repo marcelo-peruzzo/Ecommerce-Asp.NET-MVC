@@ -1,14 +1,14 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace Ecommerce_MVC;
+namespace Ecommerce_MVC.Models;
 
 [Table("Lanches")]
 public class Lanche
 {
     [Key]
     public int LancheID { get; set; }
-
+    public int LancheId { get; internal set; }
     [Required(ErrorMessage ="O nome do lanche é obrigatório!")]
     [Display(Name ="Nome do lanche")]
     [StringLength(80, MinimumLength = 5, ErrorMessage ="O {0} deve ter no mínimo {1} e no máximo {2}")]

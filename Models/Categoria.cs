@@ -1,7 +1,7 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace Ecommerce_MVC;
+namespace Ecommerce_MVC.Models;
 
 [Table("Categorias")]
 public class Categoria

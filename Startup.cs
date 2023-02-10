@@ -1,4 +1,6 @@
 using Ecommerce_MVC.Context;
+using Ecommerce_MVC.Repositories;
+using Ecommerce_MVC.Repositories.Interfaces;
 using Microsoft.EntityFrameworkCore;
 
 namespace Ecommerce_MVC;
@@ -17,6 +19,8 @@ public class Startup
     {
         //Registrando o esse contexto como um serviço e declarando a string de conexão: DefaultConnection para o SQL Server
         services.AddDbContext<AppDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+        services.AddTransient<ILancheRepository, LancheRepository>();
+        services.AddTransient<ICategoriaRepository, CategoriaRepository>();
         services.AddControllersWithViews();
     }
 
