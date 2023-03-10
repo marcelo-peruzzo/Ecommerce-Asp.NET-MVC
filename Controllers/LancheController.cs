@@ -1,4 +1,5 @@
 using Ecommerce_MVC.Repositories.Interfaces;
+using Ecommerce_MVC.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Ecommerce_MVC.Controllers
@@ -14,8 +15,14 @@ namespace Ecommerce_MVC.Controllers
 
         public IActionResult List()
         {
-            var lanches = _ilancheRepository.Lanches;
-            return View(lanches);
+            //var lanches = _ilancheRepository.Lanches;
+            //return View(lanches);
+            var lanchesListViewModel = new LancheListViewModel();
+            lanchesListViewModel.Lanches =  _ilancheRepository.Lanches;
+            lanchesListViewModel.CategoriaAtual = "Categoria atual";
+
+            return View(lanchesListViewModel);
+
         }
     }
 }
